@@ -1,6 +1,6 @@
 export default () => {
   return (
-    <div className="w-full max-w-7xl px-8 mx-auto">
+    <div className="w-full max-w-7xl mx-auto">
       <h1 className="font-semibold text-2xl text-center my-4">Meu carrinho</h1>
 
       <section className="flex items-center justify-between border-b-2 border-gray-300">
