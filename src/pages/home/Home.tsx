@@ -3,6 +3,7 @@ import { BsCartPlus } from "react-icons/bs"
 import { api } from "../../services/api"
 import { CartContext } from "../../contexts/CartContext";
 import toast from "react-hot-toast";
+import { useNavigate } from 'react-router-dom'
 
 export interface ProductsProps {
   id: number;
@@ -14,6 +15,8 @@ export interface ProductsProps {
 
 export default () => {
   const { addItemCart } = useContext(CartContext)
+
+  const navigate = useNavigate()
 
   const [products, setProducts] = useState<Array<ProductsProps>>([])
 
@@ -29,6 +32,7 @@ export default () => {
     return data.map((product) => (
       <section key={product.id} className="w-full">
         <img
+          onClick={() => navigate(`/products/${product.id}`, { replace: true })}
           className="w-full rounded-lg max-h-70 mb-2 hover:scale-110 transition-all"
           src={product.cover}
           alt={product.title}
